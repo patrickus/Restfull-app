@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Web App</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+    <body>
+        <div class="row">
+            <div class="large-6 columns">
+                <h2> Robots are fun!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div id="robots" class="large-8 columns">
+                <!-- It is a container for robots list -->
+                <script type="text/mustache" id="robotList">
+                    {{#if length}}
+                        {{#this}}
+                        <div class="row" {{data 'robot'}}>
+                            <div class="large-12 columns robotsrow">
+                                <div class="large-2 columns"><img src="images/{{name}}.png" /></div>
+                                <div class="large-3 columns"><span class="name label success radius">{{name}}</span></div>
+                                <div class="large-3 columns"><span class="type label secondary radius">{{type}}</span></div>
+                                <div class="large-2 columns"><span class="year label secondary radius">{{year}}</span></div>
+                                <div class="large-2 columns">
+                                    <span class="removebtn">Remove</span>
+                                    <span class="editbtn">Edit</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{/this}}
+                    {{else}}
+                    <div class="no-todos">No Robots!</div>
+                    {{/if}}
+                </script>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="large-4 columns">
+                    <label for="name">Robot name</label>
+                    <input type="text" id="name" name="name">
+                    <input type="hidden" id="id" name="id">
+                </div>
+                <div class="large-4 columns">
+                    <label for="type">Robot type</label>
+                    <input type="text" id="type" name="type">
+                </div>
+                <div class="large-4 columns">
+                    <label for="year">Robot year</label>
+                    <input type="text" id="year" name="year">
+                </div>
+                <div class="row">
+                    <div class="large-2 column large-offset-10">
+                        <button class="small addbtn">Add a robot</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/can.js"></script>
+        <script src="js/robotsapp.js"></script>
+    </body>
+</html>

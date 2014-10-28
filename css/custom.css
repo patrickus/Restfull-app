@@ -1,0 +1,10 @@
+/* Custom css rules */
+
+.robotsrow {
+    line-height: 2em;
+    margin-bottom: 10px;
+}
+#robots {
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 20px;
+}
